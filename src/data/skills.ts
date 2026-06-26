@@ -10,22 +10,22 @@ export interface SkillGroup {
 export const skills: SkillGroup[] = [
   {
     category: { es: 'Lenguajes', en: 'Languages' },
-    items: ['C#', 'JavaScript', 'TypeScript', 'SQL'],
+    items: ['C#', 'JavaScript', 'TypeScript', 'SQL', 'Python'],
   },
   {
     category: { es: 'Tecnologías', en: 'Frameworks & Tech' },
-    items: ['.NET', 'Astro', 'HTML', 'CSS'],
+    items: ['.NET', 'Astro', 'React', 'Next.js', 'Node.js'],
   },
   {
     category: { es: 'Inteligencia Artificial', en: 'Artificial Intelligence' },
-    items: ['Agentes de IA', 'LLMs', 'Prompt Engineering'],
+    items: ['AI Agents', 'LLMs', 'Google ADK', 'Vertex AI'],
   },
   {
     category: { es: 'Bases de datos', en: 'Databases' },
-    items: ['SQL Server'],
+    items: ['SQL Server', 'Google Firebase', 'Google BigQuery', 'Oracle Database'],
   },
   {
     category: { es: 'Herramientas', en: 'Tools' },
-    items: ['Git', 'GitHub', 'Visual Studio'],
+    items: ['Git', 'GitHub', 'VS Code', 'Power BI'],
   },
 ];

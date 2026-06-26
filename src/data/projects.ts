@@ -43,7 +43,7 @@ export const projects: Project[] = [
     },
     tags: ['C#', '.NET', 'SQL Server'],
     liveUrl: null,
-    repoUrl: null, // TODO: enlazar repositorio
+    repoUrl: 'https://github.com/SantiiVieitez/TRABAJO-DE-DIPLOMA',
     year: '2025',
   },
   {
@@ -69,10 +69,11 @@ export const projects: Project[] = [
         'Interface focused on clarity and conversion.',
       ],
     },
-    // TODO: ajustar tags al stack real del proyecto
-    tags: ['HTML', 'CSS', 'JavaScript'],
-    liveUrl: null, // TODO: enlazar URL en vivo
-    repoUrl: null, // TODO: enlazar repositorio
+    tags: ['Next.js', 'React'],
+    liveUrl: 'https://web-mass-importadores.vercel.app',
+    // Repositorio privado: no se enlaza para no mostrar un 404 a los visitantes.
+    // Si lo hacés público, agregá aquí: 'https://github.com/SantiiVieitez/Web-MassImportadores'
+    repoUrl: null,
     year: '2025',
   },
 ];

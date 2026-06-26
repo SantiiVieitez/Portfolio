@@ -14,29 +14,58 @@ export interface ExperienceItem {
 export const experience: ExperienceItem[] = [
   {
     role: {
-      es: 'Pasante — Desarrollo de Agentes de IA',
-      en: 'Intern — AI Agent Development',
+      es: 'Pasante — Automatización & Agentes de IA',
+      en: 'Intern — Automation & AI Agents',
     },
     company: {
-      // TODO: reemplazar por el nombre real de la empresa si se puede nombrar
-      es: 'Empresa del sector asegurador',
-      en: 'Insurance company',
+      es: 'Meridional Seguros · Buenos Aires',
+      en: 'Meridional Seguros · Buenos Aires',
     },
     period: {
-      es: '2026 — Actualidad', // TODO: ajustar fecha de inicio
-      en: '2026 — Present', // TODO: ajustar fecha de inicio
+      es: 'Junio 2025 — Actualidad',
+      en: 'June 2025 — Present',
     },
     current: true,
     bullets: {
       es: [
-        'Diseño y desarrollo de agentes de inteligencia artificial sobre modelos de lenguaje (LLMs) para tareas del negocio.',
-        'Integración de los agentes con datos y flujos de trabajo internos de la compañía.',
-        'Iteración sobre prompts, herramientas y lógica de los agentes para mejorar precisión y confiabilidad.',
+        'Desarrollo de Agentes de IA conectados a las bases de datos corporativas para automatizar procesos del negocio asegurador.',
+        'Implementación de soluciones de automatización en Python sobre infraestructura GCP.',
+        'Uso de Google Agent Development Kit (ADK) para orquestación de agentes inteligentes.',
       ],
       en: [
-        'Design and development of AI agents built on language models (LLMs) for business tasks.',
-        'Integration of agents with the company’s internal data and workflows.',
-        'Iteration over prompts, tools and agent logic to improve accuracy and reliability.',
+        'Development of AI agents connected to corporate databases to automate insurance business processes.',
+        'Implementation of automation solutions in Python on GCP infrastructure.',
+        'Use of the Google Agent Development Kit (ADK) to orchestrate intelligent agents.',
+      ],
+    },
+  },
+  {
+    role: {
+      es: 'Desarrollador Jr.',
+      en: 'Jr. Developer',
+    },
+    company: {
+      es: 'Proyectos académicos y freelance',
+      en: 'Academic & freelance projects',
+    },
+    period: {
+      es: '2022 — 2025',
+      en: '2022 — 2025',
+    },
+    bullets: {
+      es: [
+        'Diseño y desarrollo de aplicaciones web con HTML, CSS, JavaScript.',
+        'Desarrollo de sistema de gestión de inventarios en C# y SQL Server con reportes automatizados.',
+        'Creación de sitio web responsive para negocio local con React.js y Bootstrap, con optimización SEO.',
+        'Participación en equipos de desarrollo implementando soluciones escalables y centradas en el usuario.',
+        'Control de versiones con Git / GitHub.',
+      ],
+      en: [
+        'Design and development of web applications with HTML, CSS, JavaScript.',
+        'Development of an inventory management system in C# and SQL Server with automated reports.',
+        'Creation of a responsive website for a local business with React.js and Bootstrap, with SEO optimization.',
+        'Participation in development teams implementing scalable, user-centered solutions.',
+        'Version control with Git / GitHub.',
       ],
     },
   },

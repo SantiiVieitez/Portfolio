@@ -12,14 +12,15 @@ export const ui = {
     'nav.about': 'Perfil',
     'nav.experience': 'Experiencia',
     'nav.projects': 'Proyectos',
+    'nav.education': 'Formación',
     'nav.skills': 'Stack',
     'nav.contact': 'Contacto',
     'nav.langLabel': 'EN',
 
-    'hero.role': 'Analista en Sistemas · Desarrollo de IA',
+    'hero.role': 'Analista en Sistemas · Automatización y Agentes de IA',
     'hero.heading': 'Construyo software y agentes de IA con criterio de ingeniería.',
     'hero.subheading':
-      'Analista en sistemas y estudiante avanzado de Ingeniería en Sistemas. Actualmente desarrollo agentes de inteligencia artificial en una empresa del sector asegurador.',
+      'Analista en sistemas y estudiante avanzado de Ingeniería en Sistemas. Desarrollo agentes de inteligencia artificial y automatización de procesos en Meridional Seguros.',
     'hero.cta.contact': 'Contactar',
     'hero.cta.cv': 'Descargar CV',
     'hero.available': 'Abierto a oportunidades',
@@ -29,7 +30,7 @@ export const ui = {
     'about.p1':
       'Soy analista en sistemas y curso el 5.º año de Ingeniería en Sistemas. Me interesa el desarrollo de software bien estructurado: desde el modelo de datos hasta la capa que usa la persona final.',
     'about.p2':
-      'Hoy trabajo como pasante desarrollando agentes de inteligencia artificial en una empresa del sector asegurador, integrando modelos de lenguaje en flujos de trabajo reales. En paralelo construyo proyectos propios para profundizar en arquitectura, bases de datos y experiencia de usuario.',
+      'Hoy trabajo como pasante en Meridional Seguros, desarrollando agentes de inteligencia artificial y automatizaciones que conectan modelos de lenguaje con las bases de datos y flujos de trabajo del negocio. En paralelo construyo proyectos propios para profundizar en arquitectura, bases de datos y experiencia de usuario.',
     'about.p3':
       'Busco sumar a equipos donde pueda aportar tanto en backend como en la resolución de problemas con IA aplicada.',
 
@@ -46,6 +47,10 @@ export const ui = {
     'skills.label': 'Herramientas',
     'skills.title': 'Stack técnico',
 
+    'education.label': 'Formación',
+    'education.title': 'Educación e idiomas',
+    'education.languages': 'Idiomas',
+
     'contact.label': 'Contacto',
     'contact.title': 'Hablemos',
     'contact.text':
@@ -61,14 +66,15 @@ export const ui = {
     'nav.about': 'Profile',
     'nav.experience': 'Experience',
     'nav.projects': 'Projects',
+    'nav.education': 'Education',
     'nav.skills': 'Stack',
     'nav.contact': 'Contact',
     'nav.langLabel': 'ES',
 
-    'hero.role': 'Systems Analyst · AI Development',
+    'hero.role': 'Systems Analyst · Automation & AI Agents',
     'hero.heading': 'I build software and AI agents with an engineering mindset.',
     'hero.subheading':
-      'Systems analyst and senior Systems Engineering student. I currently develop artificial intelligence agents at an insurance company.',
+      'Systems analyst and senior Systems Engineering student. I develop AI agents and process automation at Meridional Seguros (insurance).',
     'hero.cta.contact': 'Get in touch',
     'hero.cta.cv': 'Download CV',
     'hero.available': 'Open to opportunities',
@@ -78,7 +84,7 @@ export const ui = {
     'about.p1':
       "I'm a systems analyst, currently in my 5th year of Systems Engineering. I care about well-structured software — from the data model to the layer the end user actually touches.",
     'about.p2':
-      'I work as an intern developing artificial intelligence agents at an insurance company, integrating language models into real workflows. Alongside that, I build my own projects to go deeper into architecture, databases and user experience.',
+      'I work as an intern at Meridional Seguros, developing AI agents and automations that connect language models with the business’ databases and workflows. Alongside that, I build my own projects to go deeper into architecture, databases and user experience.',
     'about.p3':
       'I want to join teams where I can contribute both on the backend and in solving problems with applied AI.',
 
@@ -94,6 +100,10 @@ export const ui = {
 
     'skills.label': 'Tooling',
     'skills.title': 'Technical stack',
+
+    'education.label': 'Education',
+    'education.title': 'Education & languages',
+    'education.languages': 'Languages',
 
     'contact.label': 'Contact',
     'contact.title': "Let's talk",

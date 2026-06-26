@@ -1,0 +1,132 @@
+---
+import { education, languagesSpoken } from '../data/education';
+import { useTranslations } from '../i18n/utils';
+import type { Lang } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<section class="section" id="education">
+  <div class="container reveal">
+    <p class="section__label">{t('education.label')}</p>
+    <h2 class="section__title">{t('education.title')}</h2>
+
+    <div class="edu">
+      <ul class="edu__list">
+        {
+          education.map((item) => (
+            <li class="edu__item">
+              <div class="edu__top">
+                <h3 class="edu__title">{item.title[lang]}</h3>
+                <span class="edu__period">{item.period[lang]}</span>
+              </div>
+              <p class="edu__institution">{item.institution[lang]}</p>
+              {item.note && <p class="edu__note">{item.note[lang]}</p>}
+            </li>
+          ))
+        }
+      </ul>
+
+      <aside class="edu__lang">
+        <p class="edu__lang-label">{t('education.languages')}</p>
+        <ul>
+          {
+            languagesSpoken.map((l) => (
+              <li>
+                <span class="edu__lang-name">{l.name[lang]}</span>
+                <span class="edu__lang-level">{l.level[lang]}</span>
+              </li>
+            ))
+          }
+        </ul>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<style>
+  .edu {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 48px;
+    align-items: start;
+  }
+  .edu__list {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+  .edu__top {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .edu__title {
+    font-size: 1.08rem;
+    font-weight: 600;
+  }
+  .edu__period {
+    font-size: 0.82rem;
+    color: var(--text-faint);
+    white-space: nowrap;
+  }
+  .edu__institution {
+    color: var(--accent);
+    font-size: 0.95rem;
+    margin-top: 4px;
+  }
+  .edu__note {
+    color: var(--text-muted);
+    font-size: 0.92rem;
+    margin-top: 8px;
+  }
+
+  .edu__lang {
+    border-left: 1px solid var(--border);
+    padding-left: 32px;
+  }
+  .edu__lang-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    margin-bottom: 16px;
+  }
+  .edu__lang ul {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .edu__lang li {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .edu__lang-name {
+    color: var(--text);
+    font-weight: 500;
+  }
+  .edu__lang-level {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 760px) {
+    .edu {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+    .edu__lang {
+      border-left: none;
+      border-top: 1px solid var(--border);
+      padding-left: 0;
+      padding-top: 28px;
+    }
+  }
+</style>
