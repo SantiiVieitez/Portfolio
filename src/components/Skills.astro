@@ -1,0 +1,65 @@
+---
+import { skills } from '../data/skills';
+import { useTranslations } from '../i18n/utils';
+import type { Lang } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<section class="section" id="skills">
+  <div class="container reveal">
+    <p class="section__label">{t('skills.label')}</p>
+    <h2 class="section__title">{t('skills.title')}</h2>
+
+    <div class="skills__grid">
+      {
+        skills.map((group) => (
+          <div class="skills__group">
+            <h3 class="skills__category">{group.category[lang]}</h3>
+            <ul class="skills__items">
+              {group.items.map((item) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .skills__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  .skills__group {
+    background: var(--bg);
+    padding: 24px;
+  }
+  .skills__category {
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    margin-bottom: 14px;
+  }
+  .skills__items {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+  }
+  .skills__items li {
+    font-size: 0.96rem;
+    color: var(--text);
+  }
+</style>

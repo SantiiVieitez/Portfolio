@@ -1,0 +1,150 @@
+---
+import { useTranslations } from '../i18n/utils';
+import type { Lang } from '../i18n/ui';
+import type { Project } from '../data/projects';
+
+interface Props {
+  lang: Lang;
+  project: Project;
+}
+const { lang, project } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<article class="card reveal">
+  <div class="card__head">
+    <div>
+      <h3 class="card__title">{project.title[lang]}</h3>
+      <p class="card__type">{project.type[lang]}</p>
+    </div>
+    {project.year && <span class="card__year">{project.year}</span>}
+  </div>
+
+  <p class="card__desc">{project.description[lang]}</p>
+
+  <div class="card__highlights">
+    <p class="card__hl-label">{t('projects.highlights')}</p>
+    <ul>
+      {project.highlights[lang].map((h) => <li>{h}</li>)}
+    </ul>
+  </div>
+
+  <ul class="card__tags">
+    {project.tags.map((tag) => <li class="tag">{tag}</li>)}
+  </ul>
+
+  {
+    (project.liveUrl || project.repoUrl) && (
+      <div class="card__links">
+        {project.liveUrl && (
+          <a class="card__link" href={project.liveUrl} target="_blank" rel="noopener">
+            {t('projects.viewLive')}
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </a>
+        )}
+        {project.repoUrl && (
+          <a class="card__link" href={project.repoUrl} target="_blank" rel="noopener">
+            {t('projects.viewCode')}
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M9 18c-4.5 1.5-4.5-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.3 4.3 0 0 0-.1-3.2s-1-.3-3.5 1.3a12 12 0 0 0-6.2 0C6.6 2.3 5.6 2.6 5.6 2.6a4.3 4.3 0 0 0-.1 3.2A4.6 4.6 0 0 0 4.2 9c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </a>
+        )}
+      </div>
+    )
+  }
+</article>
+
+<style>
+  .card {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding: 28px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    transition: border-color 0.22s var(--ease), transform 0.22s var(--ease);
+  }
+  .card:hover {
+    border-color: var(--border-strong);
+    transform: translateY(-2px);
+  }
+  .card__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .card__title {
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+  .card__type {
+    font-size: 0.85rem;
+    color: var(--accent);
+    margin-top: 5px;
+  }
+  .card__year {
+    font-size: 0.8rem;
+    color: var(--text-faint);
+  }
+  .card__desc {
+    color: var(--text-muted);
+    max-width: 60ch;
+  }
+  .card__hl-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    margin-bottom: 8px;
+  }
+  .card__highlights ul {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+  }
+  .card__highlights li {
+    position: relative;
+    padding-left: 16px;
+  }
+  .card__highlights li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.65em;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+  .card__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: auto;
+  }
+  .card__links {
+    display: flex;
+    gap: 20px;
+    padding-top: 6px;
+    border-top: 1px solid var(--border);
+  }
+  .card__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    transition: color 0.18s var(--ease);
+  }
+  .card__link:hover {
+    color: var(--accent-strong);
+  }
+</style>

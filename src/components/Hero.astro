@@ -1,0 +1,128 @@
+---
+import { profile } from '../data/profile';
+import { useTranslations } from '../i18n/utils';
+import type { Lang } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<section class="hero">
+  <div class="container hero__inner">
+    <div class="hero__text">
+      <p class="hero__avail">
+        <span class="hero__dot" aria-hidden="true"></span>
+        {t('hero.available')}
+      </p>
+      <p class="hero__role">{t('hero.role')}</p>
+      <h1 class="hero__heading">{t('hero.heading')}</h1>
+      <p class="hero__sub">{t('hero.subheading')}</p>
+
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="#contact">{t('hero.cta.contact')}</a>
+        <a class="btn" href={profile.cv} download>{t('hero.cta.cv')}</a>
+      </div>
+    </div>
+
+    <div class="hero__media" aria-hidden="false">
+      <div class="hero__photo-frame">
+        <img
+          class="hero__photo"
+          src={profile.photo}
+          alt={profile.name}
+          width="320"
+          height="380"
+          loading="eager"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    padding-block: clamp(72px, 12vw, 132px);
+  }
+  .hero__inner {
+    display: grid;
+    grid-template-columns: 1.5fr 0.9fr;
+    gap: 56px;
+    align-items: center;
+  }
+  .hero__avail {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    margin-bottom: 26px;
+  }
+  .hero__dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--accent-strong);
+    box-shadow: 0 0 0 3px var(--accent-dim);
+  }
+  .hero__role {
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: var(--accent);
+    margin-bottom: 18px;
+  }
+  .hero__heading {
+    font-size: clamp(1.9rem, 4.5vw, 3.1rem);
+    line-height: 1.1;
+    max-width: 16ch;
+    margin-bottom: 22px;
+  }
+  .hero__sub {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    max-width: 52ch;
+    margin-bottom: 34px;
+  }
+  .hero__actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .hero__media {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .hero__photo-frame {
+    position: relative;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 8px;
+    background: linear-gradient(180deg, var(--surface), var(--bg-elevated));
+  }
+  .hero__photo {
+    width: 100%;
+    max-width: 320px;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border-radius: var(--radius-sm);
+    filter: grayscale(0.12) contrast(1.02);
+  }
+
+  @media (max-width: 860px) {
+    .hero__inner {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+    .hero__media {
+      justify-content: flex-start;
+      order: -1;
+    }
+    .hero__photo {
+      max-width: 220px;
+    }
+  }
+</style>

@@ -1,0 +1,38 @@
+---
+import { profile } from '../data/profile';
+import { useTranslations } from '../i18n/utils';
+import type { Lang } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const year = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <p class="footer__copy">© {year} {profile.name}. {t('footer.rights')}</p>
+    <p class="footer__built">{t('footer.builtWith')}</p>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    border-top: 1px solid var(--border);
+    padding-block: 32px;
+  }
+  .footer__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .footer__copy,
+  .footer__built {
+    font-size: 0.84rem;
+    color: var(--text-faint);
+  }
+</style>
